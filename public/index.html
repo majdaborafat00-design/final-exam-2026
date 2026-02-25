@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam Login</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding-top: 100px; }
+        input { padding: 10px; margin: 10px; width: 250px; }
+        button { padding: 10px 20px; }
+    </style>
+</head>
+<body>
+
+<h2>Enter Exam</h2>
+
+<form id="loginForm">
+    <input type="text" name="studentName" placeholder="Student Name" required><br><br>
+    <input type="text" name="accessCode" placeholder="Access Code" required><br><br>
+    <input type="password" name="password" placeholder="Password" required><br><br>
+    <button type="submit">Start Exam</button>
+</form>
+
+<script>
+    // منع النسخ واللصق وكليك يمين
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    document.addEventListener("copy", e => e.preventDefault());
+    document.addEventListener("paste", e => e.preventDefault());
+    document.addEventListener("cut", e => e.preventDefault());
+
+    const form = document.getElementById("loginForm");
+
+    form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+
+        const studentName = form.studentName.value;
+        const accessCode = form.accessCode.value;
+        const password = form.password.value;
+
+        const response = await fetch('/start', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ studentName, accessCode, password })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            window.location.href = "/exam.html";
+        } else {
+            alert(result.message);
+        }
+    });
+</script>
+
+</body>
+</html>

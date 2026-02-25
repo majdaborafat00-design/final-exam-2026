@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Final Exam</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h2>Final Exam</h2>
+<div id="timer" style="color:red;font-size:20px;"></div>
+
+<form id="examForm">
+
+   <div class="question-step active" id="step-1">
+                <div class="question-box">
+                    <span class="question-text">
+                        1. Consider the following output from a Linux terminal session:<br>
+                        <code>[me@linuxbox ~]$ kaekfjaeifj bash</code><br>
+                        <code>kaekfjaeifj: command not found</code><br><br>
+                        Which of the following statements provides the most technically accurate explanation for this occurrence in the context of system security and path execution?
+                    </span>
+                    <div class="options">
+                        <label><input type="radio" name="q1" value="A"> A) The system failed to execute the command because the user <b>me</b> does not have the necessary <b>sudo</b> privileges to access the <b>/root</b> directory where unknown binaries are stored by default</label>
+                        <label><input type="radio" name="q1" value="B"> B) The command <b>kaekfjaeifj</b> is a built-in shell function that has been disabled in the current session's configuration file (.bashrc or .bash_profile)</label>
+                        <label><input type="radio" name="q1" value="C"> C) The shell searched all directories defined in the <b>$PATH</b> environment variable and failed to find an executable file named <b>kaekfjaeifj</b>, or the file exists but lacks the "execute" permission bit for the current user</label>
+                        <label><input type="radio" name="q1" value="D"> D) The syntax of the command is correct, but the CPU architecture of the linuxbox system is incompatible with the instruction set required by the binary <b>kaekfjaeifj</b></label>
+                    </div>
+                </div>
+            </div>
+
+
+  <div class="question-step" id="step-2">
+    <div class="question-box">
+        <span class="question-text">
+            2. A user named <b>me</b> attempts to access the directory <b>/data/secure/</b> using the command 
+            <code>cd /data/secure/</code>.  
+            The <b>secure</b> directory has permissions set to <code>700 (drwx------)</code> and is owned by <b>me</b>.  
+            However, its parent directory <b>/data/</b> has permissions set to <code>000 (d---------)</code> 
+            and is owned by <b>root</b>.  
+            What will be the result?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q2" value="A"> A) The system automatically elevates privileges because the destination directory is owned by <b>me</b>.</label>
+            <label><input type="radio" name="q2" value="B"> B) The command fails with “Permission denied” because execute (x) permission is required on every directory in the path.</label>
+            <label><input type="radio" name="q2" value="C"> C) The command succeeds, but the user cannot list files inside <b>secure</b>.</label>
+            <label><input type="radio" name="q2" value="D"> D) The command succeeds because ownership of the target directory overrides parent permissions.</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-3">
+    <div class="question-box">
+        <span class="question-text">
+            3. A user executes the following command:  
+            <code>ls /bin /nonexistent_folder</code>  
+            How will the shell handle this command?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q3" value="A"> A) The entire command fails and produces no output.</label>
+            <label><input type="radio" name="q3" value="B"> B) The shell creates <b>/nonexistent_folder</b> automatically.</label>
+            <label><input type="radio" name="q3" value="C"> C) The contents of <b>/bin</b> are displayed, followed by an error message for <b>/nonexistent_folder</b>.</label>
+            <label><input type="radio" name="q3" value="D"> D) The command fails because <b>ls</b> cannot process multiple directory arguments.</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-4">
+    <div class="question-box">
+        <span class="question-text">
+            4. A system administrator must copy the directory <b>/projects/web_app/</b> 
+            to <b>/backup/</b>.  
+            The directory contains subdirectories, hidden files, and specific ownership, 
+            permissions, and timestamps that must remain unchanged.  
+            Which command ensures a complete and accurate copy?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q4" value="A"> A) <b>cp -a /projects/web_app/ /backup/</b></label>
+            <label><input type="radio" name="q4" value="B"> B) <b>cp -r /projects/web_app/ /backup/</b></label>
+            <label><input type="radio" name="q4" value="C"> C) <b>cp -v /projects/web_app/ /backup/</b></label>
+            <label><input type="radio" name="q4" value="D"> D) <b>cp /projects/web_app/ /backup/</b></label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-5">
+    <div class="question-box">
+        <span class="question-text">
+            5. Which command correctly creates four directories named 
+            <b>lab1</b>, <b>lab2</b>, <b>lab3</b>, and <b>lab4</b> in a single command?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q5" value="A"> A) mkdir [lab1-lab4]</label>
+            <label><input type="radio" name="q5" value="B"> B) mkdir lab1 lab2 lab3 lab4</label>
+            <label><input type="radio" name="q5" value="C"> C) mkdir lab1, lab2, lab3, lab4</label>
+            <label><input type="radio" name="q5" value="D"> D) mkdir lab1-lab4</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-6">
+    <div class="question-box">
+        <span class="question-text">
+            6. A user creates a symbolic link using:  
+            <code>ln -s /var/log/syslog my_log</code>  
+            Later, the original file is renamed to <b>/var/log/syslog.old</b>.  
+            What happens when the user attempts to read <b>my_log</b>?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q6" value="A"> A) The symbolic link automatically updates to the new filename.</label>
+            <label><input type="radio" name="q6" value="B"> B) The symbolic link becomes broken (dangling) and returns “No such file or directory”.</label>
+            <label><input type="radio" name="q6" value="C"> C) The link continues to work because it references the inode directly.</label>
+            <label><input type="radio" name="q6" value="D"> D) The system recreates the original file automatically.</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-7">
+    <div class="question-box">
+        <span class="question-text">
+            7. A user wants to display files in long format, sorted by modification time, 
+            in reverse order. Which command is syntactically correct?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q7" value="A"> A) ls -lt --reverse</label>
+            <label><input type="radio" name="q7" value="B"> B) ls -tl --reverse</label>
+            <label><input type="radio" name="q7" value="C"> C) ls -l -t --reverse</label>
+            <label><input type="radio" name="q7" value="D"> D) All of the above are correct.</label>
+        </div>
+    </div>
+</div>
+
+            <div class="question-step" id="step-8">
+    <div class="question-box">
+        <span class="question-text">
+            8. A user wants to list all files in a directory, including hidden files 
+            (those beginning with a dot), but exclude the entries <code>.</code> and <code>..</code> 
+            to keep the output clean. Which command should be used?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q8" value="A"> A) ls -a</label>
+            <label><input type="radio" name="q8" value="B"> B) ls -h</label>
+            <label><input type="radio" name="q8" value="C"> C) ls -A</label>
+            <label><input type="radio" name="q8" value="D"> D) ls -S</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-9">
+    <div class="question-box">
+        <span class="question-text">
+            9. While viewing a large log file using <code>less</code>, an administrator searches 
+            for <code>/error</code>. After the first match appears, they want to locate the 
+            previous occurrence and then immediately quit the program. Which sequence is correct?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q9" value="A"> A) Press <b>1G</b>, then use the Up Arrow.</label>
+            <label><input type="radio" name="q9" value="B"> B) Press <b>Shift + N</b>, then press <b>q</b>.</label>
+            <label><input type="radio" name="q9" value="C"> C) Press <b>G</b>, then press <b>b</b>.</label>
+            <label><input type="radio" name="q9" value="D"> D) Press <b>n</b>, then press <b>q</b>.</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-10">
+    <div class="question-box">
+        <span class="question-text">
+            10. In the Linux file system, what is the correct relationship 
+            between an Inode and a Hard Link?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q10" value="A"> A) A Hard Link stores a duplicate copy of the Inode.</label>
+            <label><input type="radio" name="q10" value="B"> B) A Hard Link creates a new Inode synchronized with the original.</label>
+            <label><input type="radio" name="q10" value="C"> C) A Hard Link is an additional directory entry that points to the same Inode.</label>
+            <label><input type="radio" name="q10" value="D"> D) Hard Links reference files by their file path instead of Inode numbers.</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-11">
+    <div class="question-box">
+        <span class="question-text">
+            11. A file <b>file1.txt</b> has Inode number 12345. 
+            You create a hard link using <code>ln file1.txt file2.txt</code>, 
+            then delete the original file with <code>rm file1.txt</code>. 
+            What will <code>ls -i file2.txt</code> display?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q11" value="A"> A) An empty file with 0 bytes.</label>
+            <label><input type="radio" name="q11" value="B"> B) An error because Inode 12345 was removed.</label>
+            <label><input type="radio" name="q11" value="C"> C) The same Inode number (12345), and the file remains accessible.</label>
+            <label><input type="radio" name="q11" value="D"> D) A newly assigned Inode number.</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-12">
+    <div class="question-box">
+        <span class="question-text">
+            12. Which feature is unique to Symbolic Links compared to Hard Links?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q12" value="A"> A) They increase the link count of the target Inode.</label>
+            <label><input type="radio" name="q12" value="B"> B) They store a complete copy of the file’s data.</label>
+            <label><input type="radio" name="q12" value="C"> C) They can reference directories and span across different file systems.</label>
+            <label><input type="radio" name="q12" value="D"> D) They remain valid even if the original file is renamed.</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-13">
+    <div class="question-box">
+        <span class="question-text">
+            13. Which command correctly creates a copy of <b>file1</b> named <b>file2</b>?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q13" value="A"> A) cp file1 file2</label>
+            <label><input type="radio" name="q13" value="B"> B) cp -i file2 file1</label>
+            <label><input type="radio" name="q13" value="C"> C) cp file1/ file2</label>
+            <label><input type="radio" name="q13" value="D"> D) cp -r file1 file2</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-14">
+    <div class="question-box">
+        <span class="question-text">
+            14. Which option forces the system to prompt for confirmation 
+            before overwriting an existing file when using <code>cp</code>?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q14" value="A"> A) -r</label>
+            <label><input type="radio" name="q14" value="B"> B) -v</label>
+            <label><input type="radio" name="q14" value="C"> C) -f</label>
+            <label><input type="radio" name="q14" value="D"> D) -i</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-15">
+    <div class="question-box">
+        <span class="question-text">
+            15. What happens when executing <code>cp -r dir1 dir2</code> 
+            if <b>dir2</b> already exists?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q15" value="A"> A) The directory <b>dir1</b> (and its contents) is copied inside <b>dir2</b>.</label>
+            <label><input type="radio" name="q15" value="B"> B) The existing <b>dir2</b> is deleted and replaced.</label>
+            <label><input type="radio" name="q15" value="C"> C) Only the files inside <b>dir1</b> are copied without the folder itself.</label>
+            <label><input type="radio" name="q15" value="D"> D) The command fails if <b>dir2</b> is not empty.</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-16">
+    <div class="question-box">
+        <span class="question-text">
+            16. Which command completely removes the directory 
+            <b>Old_Files</b> along with all of its subdirectories and files?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q16" value="A"> A) rm -v Old_Files</label>
+            <label><input type="radio" name="q16" value="B"> B) rm -r Old_Files</label>
+            <label><input type="radio" name="q16" value="C"> C) rm -i Old_Files</label>
+            <label><input type="radio" name="q16" value="D"> D) rm -f Old_Files</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-17">
+    <div class="question-box">
+        <span class="question-text">
+            17. A user runs: <code>rm -r -i -f -v Important_Project</code>. 
+            Considering how conflicting options are handled, what is the outcome?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q17" value="A"> A) The command fails due to incompatible flags.</label>
+            <label><input type="radio" name="q17" value="B"> B) The directory is removed recursively without prompts because <b>-f</b> overrides <b>-i</b>.</label>
+            <label><input type="radio" name="q17" value="C"> C) The command prompts before deleting each file.</label>
+            <label><input type="radio" name="q17" value="D"> D) The command runs in safe mode and does not delete anything.</label>
+        </div>
+    </div>
+</div>
+
+<div class="question-step" id="step-18">
+    <div class="question-box">
+        <span class="question-text">
+            18. Which command displays only the number of lines 
+            in the file <b>students.txt</b>?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q18" value="A"> A) wc -l students.txt</label>
+            <label><input type="radio" name="q18" value="B"> B) wc -c students.txt</label>
+            <label><input type="radio" name="q18" value="C"> C) wc -w students.txt</label>
+            <label><input type="radio" name="q18" value="D"> D) ls students.txt | wc</label>
+        </div>
+    </div>
+</div>
+
+  <!-- Question 19 -->
+<div class="question-step" id="step-19">
+    <div class="question-box">
+        <span class="question-text">
+            19. You are working on a file named <b>data.txt</b>. You want to search for the word "error" inside the file, remove duplicate lines, and count the remaining lines. Which command sequence is correct?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q19" value="A"> A) grep "error" data.txt | sort | uniq | wc -l</label>
+            <label><input type="radio" name="q19" value="B"> B) rm "error" data.txt | uniq | wc -l</label>
+            <label><input type="radio" name="q19" value="C"> C) grep "error" data.txt | wc -l | uniq</label>
+            <label><input type="radio" name="q19" value="D"> D) wc -l data.txt | grep "error" | uniq</label>
+        </div>
+    </div>
+</div>
+
+<!-- Question 20 -->
+<div class="question-step" id="step-20">
+    <div class="question-box">
+        <span class="question-text">
+            20. You have a large file <b>server.log</b>. Find all unique lines containing "error" and count them. Which command is correct?
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q20" value="A"> A) grep "error" server.log | sort | uniq | wc -l</label>
+            <label><input type="radio" name="q20" value="B"> B) rm "error" server.log | uniq | wc -w</label>
+            <label><input type="radio" name="q20" value="C"> C) echo "error" * | uniq -d</label>
+            <label><input type="radio" name="q20" value="D"> D) grep "error" server.log | wc -c</label>
+        </div>
+    </div>
+</div>
+
+<!-- Question 21 -->
+<div class="question-step" id="step-21">
+    <div class="question-box">
+        <span class="question-text">
+            21. Configure <b>Project_Alpha</b> so the owner has full control, the group can read/write/execute inside, and others have no access. Choose the correct symbolic permission string.
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q21" value="A"> A) -rwxrwx---</label>
+            <label><input type="radio" name="q21" value="B"> B) drwxrwx---</label>
+            <label><input type="radio" name="q21" value="C"> C) drwxr-x---</label>
+            <label><input type="radio" name="q21" value="D"> D) lrwxrwxrwx</label>
+        </div>
+    </div>
+</div>
+
+
+ <!-- Question 22 (Essay) -->
+<div class="question-step" id="step-22">
+    <div class="question-box">
+        <span class="question-text">
+            22. Scenario:<br>
+            Inside <code>/projects/data</code>, you have <b>tasks.log</b>.<br>
+            1. Filter & Count: Find unique lines with "CRITICAL" and save the count to <b>final_report.txt</b>.<br>
+            2. Permissions: Set Owner and Group to read/write, Others no access.<br>
+            3. Cleanup: Delete the entire <code>/projects/data</code> directory recursively without confirmation.<br><br>
+            Provide the Linux commands and explain the flags used.
+        </span>
+        <textarea name="q22_answer" class="essay-area" placeholder="Enter your full commands and explanations here..." style="width:100%;height:120px;padding:10px;border:1px solid #ccc;border-radius:6px;"></textarea>
+    </div>
+</div>
+<!-- Question 23 -->
+<div class="question-step" id="step-23">
+    <div class="question-box">
+        <span class="question-text">
+            23. You have <b>confidential.txt</b>. Set permissions so the owner has full access, the group can read/execute, and others have no access.
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q23" value="A"> A) chmod 750 confidential.txt</label>
+            <label><input type="radio" name="q23" value="B"> B) chmod 640 confidential.txt</label>
+            <label><input type="radio" name="q23" value="C"> C) chmod 777 confidential.txt</label>
+            <label><input type="radio" name="q23" value="D"> D) chmod 700 confidential.txt</label>
+        </div>
+    </div>
+</div>
+
+<!-- Question 24 -->
+<div class="question-step" id="step-24">
+    <div class="question-box">
+        <span class="question-text">
+            24. Modify a file's permissions: add execute for the owner and set group/others to read/write only, removing any previous execute permissions.
+        </span>
+        <div class="options">
+            <label><input type="radio" name="q24" value="A"> A) chmod u+x,go=rw file.txt</label>
+            <label><input type="radio" name="q24" value="B"> B) chmod u-x,go-rw file.txt</label>
+            <label><input type="radio" name="q24" value="C"> C) chmod a+x file.txt</label>
+            <label><input type="radio" name="q24" value="D"> D) chmod o-rw file.txt</label>
+        </div>
+    </div>
+</div>
+
+
+  <!-- Navigation -->
+  <div class="nav-buttons">
+    <button type="button" id="prevBtn" onclick="changeQuestion(-1)" disabled>Previous</button>
+    <button type="button" id="nextBtn" onclick="changeQuestion(1)">Next</button>
+    <button type="submit" id="submitBtn" style="display:none;">Submit Final Exam</button>
+  </div>
+
+</form>
+
+<script src="script.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // منع النسخ واللصق
+  document.addEventListener("contextmenu", e => e.preventDefault());
+  document.addEventListener("copy", e => e.preventDefault());
+  document.addEventListener("paste", e => e.preventDefault());
+  document.addEventListener("cut", e => e.preventDefault());
+
+  const form = document.getElementById("examForm");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    // حفظ آخر إجابة
+    if (typeof saveAnswer === "function") {
+      saveAnswer(currentStep);
+    }
+
+    try {
+      const response = await fetch("/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ answers: answers })
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        alert("Exam submitted successfully!");
+        window.location.href = "/";
+      } else {
+        alert(result.message || "Submission failed");
+      }
+
+    } catch (err) {
+      alert("Server error. Try again.");
+      console.error(err);
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>
